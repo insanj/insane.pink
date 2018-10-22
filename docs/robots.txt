@@ -1,1 +1,1 @@
-Sitemap: http://barber.samesies.io/sitemap.xml
+Sitemap: https://insane.pw/sitemap.xml

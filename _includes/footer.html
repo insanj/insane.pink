@@ -1,7 +1,7 @@
 <!-- The footer at the very bottom of the screen -->
 <footer class="footer section-padding">
   <div class="grid">
-    <div class="subscribe" id="subscribe">
+    <div class="subscribe" id="subscribe" style="display:none;">
       <div class="subscribe__container">
         <span class="subscribe__title">Subscribe</span>
         <p class="subscribe__text">Get a weekly email of posts I’ve added to the site.</p>
@@ -9,9 +9,9 @@
       </div>
     </div>
 
-    <hr class="sep--white"/>
+    <hr class="sep--white" style="display:none;"/>
 
-    <div class="footer__container">
+    <div class="footer__container" style="margin-top:-10px;">
       {% tags_list :threshold => 1, :sort_by => count, :order_by => desc, :limit => 5 %}
 
       {% include social.html %}

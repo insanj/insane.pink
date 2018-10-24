@@ -1,4 +1,4 @@
-
+let insaneYoutubeElementName = ".posts__container";
 
 function composeInsaneDiv(postTitle, youtubeLink, thumbnailSrc, contentText) {
 	let compose_articleDiv = '<article class="posts__post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">';
@@ -11,25 +11,31 @@ function composeInsaneDiv(postTitle, youtubeLink, thumbnailSrc, contentText) {
 }
 
 function renderInsaneDiv(insaneDiv) {
-	$(".posts__container").append(insaneDiv);
+	$(insaneYoutubeElementName).append(insaneDiv);
 }
 
-// let youtubeChannelDetailsURL = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forUsername=insanj&key=AIzaSyBqtpFKMmzVplgamkwVSS5-troG3qEn4VA";\
-// 	let channelPlaylistId = data["items"][0]["id"];
-let youtubeChannelVideosURL = "https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU2Oy-7hKqxLI1w_b_kfUgYA&key=AIzaSyBqtpFKMmzVplgamkwVSS5-troG3qEn4VA&fields=items&part=snippet&maxResults=6";
+function insaneYoutubeSearch() {
+	// let youtubeChannelDetailsURL = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forUsername=insanj&key=AIzaSyBqtpFKMmzVplgamkwVSS5-troG3qEn4VA";\
+	// 	let channelPlaylistId = data["items"][0]["id"];
+	let youtubeChannelVideosURL = "https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU2Oy-7hKqxLI1w_b_kfUgYA&key=AIzaSyBqtpFKMmzVplgamkwVSS5-troG3qEn4VA&fields=items&part=snippet&maxResults=6";
 
-$.getJSON(youtubeChannelVideosURL, function (data) {
-	let youtubeVideos = data["items"];
-	$.each(youtubeVideos, function(i,val) {
-		let youtubeVideoSnippet = val["snippet"];
-		let youtubeVideoName = youtubeVideoSnippet["title"];
-		let youtubeVideoId = youtubeVideoSnippet["resourceId"]["videoId"];
-		let youtubeVideoURL = "https://youtube.com/watch?v=" + youtubeVideoId;
-		let youtubeVideoThumbnailURL = youtubeVideoSnippet["thumbnails"]["default"]["url"];
-		let youtubeVideoDescription = youtubeVideoSnippet["description"].split("\n")[0];
-		
-		let youtubeDiv = composeInsaneDiv(youtubeVideoName, youtubeVideoURL, youtubeVideoThumbnailURL, youtubeVideoDescription);
-		renderInsaneDiv(youtubeDiv);
+	$.getJSON(youtubeChannelVideosURL, function (data) {
+		let youtubeVideos = data["items"];
+		$.each(youtubeVideos, function(i,val) {
+			let youtubeVideoSnippet = val["snippet"];
+			let youtubeVideoName = youtubeVideoSnippet["title"];
+			let youtubeVideoId = youtubeVideoSnippet["resourceId"]["videoId"];
+			let youtubeVideoURL = "https://youtube.com/watch?v=" + youtubeVideoId;
+			let youtubeVideoThumbnailURL = youtubeVideoSnippet["thumbnails"]["default"]["url"];
+			let youtubeVideoDescription = youtubeVideoSnippet["description"].split("\n")[0];
+			
+			let youtubeDiv = composeInsaneDiv(youtubeVideoName, youtubeVideoURL, youtubeVideoThumbnailURL, youtubeVideoDescription);
+			renderInsaneDiv(youtubeDiv);
+		});
 	});
-});
+}
 
+$(insaneYoutubeElementName).ready(function() {
+	console.log("🤘 Beginning youtube search for videos...");
+	insaneYoutubeSearch();
+});

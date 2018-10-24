@@ -7,7 +7,7 @@
 
 <meta itemprop="name" content="{{ site.name }}">
 <meta itemprop="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description }}{% endif %}">
-<meta itemprop="image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.default_img | absolute_url }}{% endif %}">
+<meta itemprop="image" content="{{ site.default_img | absolute_url }}">
 
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:type" content="website">

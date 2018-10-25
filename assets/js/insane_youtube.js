@@ -1,4 +1,4 @@
-let insaneYoutubeElementName = ".posts__container";
+let insaneYoutubeElementName = ".siege_videos";
 
 function composeInsaneDiv(postTitle, youtubeLink, thumbnailSrc, contentText) {
 	let compose_articleDiv = '<article class="posts__post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">';
@@ -17,7 +17,7 @@ function renderInsaneDiv(insaneDiv) {
 function insaneYoutubeSearch() {
 	// let youtubeChannelDetailsURL = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forUsername=insanj&key=AIzaSyBqtpFKMmzVplgamkwVSS5-troG3qEn4VA";\
 	// 	let channelPlaylistId = data["items"][0]["id"];
-	let youtubeChannelVideosURL = "https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU2Oy-7hKqxLI1w_b_kfUgYA&key=AIzaSyBqtpFKMmzVplgamkwVSS5-troG3qEn4VA&fields=items&part=snippet&maxResults=6";
+	let youtubeChannelVideosURL = "https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU2Oy-7hKqxLI1w_b_kfUgYA&key=AIzaSyBqtpFKMmzVplgamkwVSS5-troG3qEn4VA&fields=items&part=snippet&maxResults=20";
 
 	$.getJSON(youtubeChannelVideosURL, function (data) {
 		let youtubeVideos = data["items"];

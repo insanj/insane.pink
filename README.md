@@ -4,12 +4,14 @@
 
 ![](screenshot.jpg)
 
-# install
+# usage
 
-- insane.pw uses the [barber-jekyll](https://github.com/samesies/barber-jekyll#installation) theme
-- run `bundle install` ([install Bundler](https://bundler.io/)) 
-- run `bundle exec jekyll serve` or `npm start` to see your development site
-- run `bundle exec jekyll build` or `npm run build` to build a production ready site for deployment
+> insane.pw uses the [barber-jekyll](https://github.com/samesies/barber-jekyll#installation) theme
+
+- install with `bundle install` ([install Bundler](https://bundler.io/)) 
+- serve with `npm start` (`bundle exec jekyll serve`) to see your development site
+- deploy with `npm run build` (`bundle exec jekyll build`) to build a production ready site
+- sync with `npm run youtube` (`node insane_sync.js`) to create a new post from the latest insane.jpg youtube video
 
 # about
 

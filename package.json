@@ -1,13 +1,14 @@
 {
-  "name": "barber-jekyll",
-  "description": "Barber is a blog theme for Jekyll built by Thomas Vaeth at Samesies using HTML, Sass, and JavaScript.",
-  "demo": "http://barber.samesies.io",
+  "name": "insanepw",
+  "description": "insanepw is a jekyll site built using the barber theme. it contains lots of scripts and custom elements to pull from youtube!",
+  "demo": "https://insane.pw",
   "version": "1.0.0",
   "scripts": {
     "start": "bundle exec jekyll serve",
     "build": "bundle exec jekyll build",
     "deploy": "gulp build && bundle exec jekyll build && s3-website deploy _site",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "youtube": "node insane_sync.js"
   },
   "author": {
     "name": "Samesies",
@@ -22,7 +23,7 @@
   ],
   "dependencies": {
     "aos": "^2.2.0",
-    "jquery": "3.0.0",
+    "jquery": "^3.0.0",
     "salvattore": "^1.0.9"
   },
   "devDependencies": {
@@ -42,6 +43,7 @@
     "gulp-stylelint": "^5.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-zip": "^4.0.0",
+    "jquery": "^3.3.1",
     "s3-website": "^3.3.0",
     "stylelint-config-standard": "^17.0.0",
     "vinyl-buffer": "^1.0.0",

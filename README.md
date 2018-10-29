@@ -2,7 +2,7 @@
 
 🎳 website for insane.jpg siege youtube videos
 
-![](screenshot.jpg)
+![](assets/images/screenshot.jpg)
 
 # usage
 

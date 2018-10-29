@@ -20,10 +20,12 @@ function composePostFromYoutubeDiv(youtubeDiv) {
 }
 
 function composePostFilenameFromYoutubeDiv(youtubeDiv) {
-	let templateString = "<DATE>-<TITLE>.markdown";
-	var composedFilename = templateString.replace("<DATE>", youtubeDiv.youtubeVideoDate);
-	var strippedTitle = youtubeDiv.youtubeVideoName.toLowerCase().replace(" ", "-");
-	composedFilename = composedFilename.replace("<TITLE>", strippedTitle);
+	var strippedTitleElements = youtubeDiv.youtubeVideoName.toLowerCase().split(" ");
+	var strippedTitleReplacement = "";
+	for (var i = 0; i < 6; i++) {
+		strippedTitleReplacement += "-" + strippedTitleElements[i];
+	}
+	var composedFilename = youtubeDiv.youtubeVideoDate + strippedTitleReplacement + ".markdown";
 	return composedFilename;
 }
 
@@ -64,8 +66,9 @@ function getYoutubeVideosFromInternet(limit, completion) {
 				var youtubeDiv = {
 					youtubeVideoName: youtubeVideoSnippet["title"],
 					youtubeVideoURL: "https://youtube.com/watch?v=" + youtubeVideoId,
-					youtubeVideoThumbnailURL: youtubeVideoSnippet["thumbnails"]["default"]["url"],
-					youtubeVideoDescription: youtubeVideoSnippet["description"].split("\n")[0]
+					youtubeVideoThumbnailURL: youtubeVideoSnippet["thumbnails"]["maxres"]["url"],
+					youtubeVideoDescription: youtubeVideoSnippet["description"].split("\n")[0],
+					youtubeVideoDate: youtubeVideoSnippet["publishedAt"].split("T")[0]
 				};
 				
 				youtubeDivs.push(youtubeDiv);

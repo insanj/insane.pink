@@ -1,8 +1,8 @@
 ---
 layout: post
 title: how to beat the mad house challenge (60 kills) in 24 hours - rainbow six siege
-date: undefined
-image: https://i.ytimg.com/vi/jDV_xMyprKw/default.jpg
+date: 2018-10-27
+image: https://i.ytimg.com/vi/jDV_xMyprKw/maxresdefault.jpg
 youtube_url: https://youtube.com/watch?v=jDV_xMyprKw
 ---
 

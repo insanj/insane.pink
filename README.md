@@ -1,6 +1,8 @@
 # insane.pw
 
-🎳 website for insane.jpg siege youtube videos
+🎳 website for insane.jpg siege youtube videos. 
+
+> See production site @ https://insane.pw or master branch deployment @ https://insane.pink!
 
 ![](assets/images/screenshot.jpg)
 

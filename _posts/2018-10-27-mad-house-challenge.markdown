@@ -2,7 +2,7 @@
 layout: post
 title: "how to beat the mad house challenge (60 kills) in 24 hours"
 date: 2018-10-27
-image: /assets/images/madhouse.jpg
+image: /assets/images/halloween.jpg
 youtube_url: https://www.youtube.com/watch?v=jDV_xMyprKw
 ---
 

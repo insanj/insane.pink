@@ -1,8 +1,8 @@
 ---
 layout: post
-title: getting good at the shotgun in grim sky - rainbow six siege
+title: getting good at the shotgun in grim sky
 date: 2018-10-30
-image: https://i.ytimg.com/vi/995xO2sVaiU/maxresdefault.jpg
+image: /assets/images/grimsky.jpg
 youtube_url: https://youtube.com/watch?v=995xO2sVaiU
 ---
 

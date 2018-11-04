@@ -39,12 +39,4 @@ compress_html:
   clippings: all
   comments: all
   startings: [html, head, body]
-exclude:
-  - node_modules
-  - .DS_Store
-  - barber.jpg
-  - Gemfile
-  - Gemfile.lock
-  - gulpfile.js
-  - package.json
-  - README.md
+exclude: [vendor]

@@ -1,2 +1,3 @@
-runtime: nodejs8
-env: standard
+runtime: ruby
+env: flex
+entrypoint: bundle exec jekyll serve

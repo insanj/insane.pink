@@ -23,11 +23,10 @@
 ## Google Cloud
 
 1. clone this repository (or create your own jekyll-based repo)
-2. create a new project in the Google Cloud Console and [begin a new app in the App Engine section](https://console.cloud.google.com/appengine/start)
-3. enable access to the [Cloud Build API for the project](https://console.developers.google.com/apis/library/cloudbuild.googleapis.com) under the API Library section 
-4. install the [gcloud sdk](https://cloud.google.com/sdk/?hl=en_US) on your local machine and run `gcloud init` in the project directory to setup a new configuration for the project you just created remotely
-5. run `gcloud app deploy`, which will upload and serve your files (make sure the `_config.yml` and `app.yaml` are setup to your liking)
-
+2. create a new project in the Google Cloud Console and [Create a Bucket](https://console.cloud.google.com/storage/create-bucket) under the Storage section in the sidebar
+3. install the [gcloud sdk](https://cloud.google.com/sdk/?hl=en_US) on your local machine and run `gcloud auth login`
+4. run `jekyll build && gsutil -m rsync -d -r _site gs://<BUCKET_URL>.com`, which will upload and serve your files (make sure the `_config.yml` and `app.yaml` are setup to your liking)
+5. select the bucket from the [main Bucket Browser menu](https://console.cloud.google.com/storage/browser) and change its Permissions (sometimes in the Info Panel on the right)
 
 ## Github Pages
 

@@ -66,7 +66,7 @@ function getYoutubeVideosFromInternet(limit, completion) {
 				var youtubeDiv = {
 					youtubeVideoName: youtubeVideoSnippet["title"],
 					youtubeVideoURL: "https://youtube.com/watch?v=" + youtubeVideoId,
-					youtubeVideoThumbnailURL: youtubeVideoSnippet["thumbnails"]["maxres"]["url"],
+					youtubeVideoThumbnailURL: youtubeVideoSnippet["thumbnails"]["high"]["url"],
 					youtubeVideoDescription: youtubeVideoSnippet["description"].split("\n")[0],
 					youtubeVideoDate: youtubeVideoSnippet["publishedAt"].split("T")[0]
 				};

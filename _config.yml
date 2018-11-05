@@ -35,8 +35,14 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-youtube
+  - jekyll-app-engine
 compress_html:
   clippings: all
   comments: all
   startings: [html, head, body]
 exclude: [vendor]
+
+app_engine:
+  runtime: go
+  api_version: go1
+  default_expiration: 300s

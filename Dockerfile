@@ -11,4 +11,4 @@ FROM gcr.io/google_appengine/ruby
 COPY . /app/
 RUN bundle install
 
-RUN bundle exec jekyll serve
+RUN bundle exec jekyll serve --host=216.239.36.21

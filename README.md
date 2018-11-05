@@ -31,6 +31,11 @@
 
 ## Google Cloud
 
+### 💎 Custom (Docker) Environment App
+
+1. install [docker on your local machine](https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository) in order to test the custom environment
+2. ensure the docker service is running (may require running the following command on Linux/Ubuntu subsystem: `sudo nohup docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &`)
+
 ### 🍎 Ruby App
 
 1. clone this repository (or create your own jekyll-based repo)

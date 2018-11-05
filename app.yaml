@@ -1,3 +1,2 @@
-runtime: ruby
+runtime: custom
 env: flex
-entrypoint: bundle exec jekyll serve

@@ -53,6 +53,11 @@ entrypoint: bundle exec jekyll serve
 
 > NOTE: certain config values are extremely important to hosting a jekyll server, such as the 3 listed above in the `app.yaml`, and the `excludes: [vendor]` line in the `_config.yml`, [the crux of the issue reported here](https://github.com/jekyll/jekyll/issues/5267)
 
+6. enable websocket use by running the following command:
+```
+gcloud compute firewall-rules create default-allow-jekyll --allow tcp:4000 --target-tags jekyll --description "allow jekyll traffic on port 4000"
+```
+
 ### 💧 Bucket
 
 1. clone this repository (or create your own jekyll-based repo)

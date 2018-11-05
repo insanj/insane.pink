@@ -24,12 +24,17 @@
 
 - install with `bundle install` ([install Bundler](https://bundler.io/)) 
 - serve with `npm start` (`bundle exec jekyll serve`) to see your development site
-- deploy with `npm run build` (`bundle exec jekyll build`) to build a production ready site
+- build with `npm run build` (`bundle exec jekyll build`) to get a production ready site
 - sync with `npm run youtube` (`node insane_sync.js`) to create a new post from the latest insane.jpg youtube video
+- deploy with `jekyll build --destination docs && gcloud app deploy` which both generates a static site for [Github Pages](https://insane.pink) and [Google Cloud](https://insane.pw)
 
 # setup
 
 ## Google Cloud
+
+### 🏮 Jekyll-App-Engine
+
+1. https://github.com/jamesramsay/jekyll-app-engine
 
 ### 💎 Custom (Docker) Environment App
 

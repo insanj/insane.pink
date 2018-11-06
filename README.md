@@ -24,6 +24,39 @@
 
 > NOTE: insane.pw uses the [barber-jekyll](https://github.com/samesies/barber-jekyll#installation) theme
 
+# Components
+
+## 🍜 Steam API Integration
+
+### Setup 
+
+1. [register a new api key with the steam dev community](https://steamcommunity.com/dev/registerkey)
+2. lookup your steam username and get the identifier in the steamID64 format (mine is `76561198017375926`). [steamidfinder.com works well for this](https://steamidfinder.com/lookup/insanj/)
+3. build a url using the following format:
+```
+http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=<API_KEY>&steamids=<STEAM_ID>
+```
+
+4. parse the JSON response to extract the important info displayed below:
+```json
+{"response":
+	{"players":
+		[{
+			"lastlogoff":1541446073,
+			"profileurl":"https://steamcommunity.com/id/insanj/",
+			"avatarfull":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/8f/8f80c9dae4338b1c83ed5e4b3a0da663e0d51b14_full.jpg",
+			"personastate":1,
+			"timecreated":1259700378,
+			"gameextrainfo":"Tom Clancy's Rainbow Six Siege",
+			"gameid":"359550",
+			"loccountrycode":"US"
+		}]
+	}
+}
+```
+
+5. 🎉 render and ship it! [great documentation is here](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerSummaries_.28v0001.29) for all the API metadata responses
+
 # Setup
 
 ## Google Cloud

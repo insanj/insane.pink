@@ -1,5 +1,5 @@
 function insane_buildSteamProfileURL(steam_apiKey, steam_steamId) {
-	return "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key="+steam_apiKey+"&steamids="+steam_steamId;
+	return "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key="+steam_apiKey+"&steamids="+steam_steamId;
 }
 
 function insane_getSteamProfile(steam_apiKey, steam_steamId, steam_profileCompletion) {

@@ -1,0 +1,14 @@
+
+runtime: go
+api_version: go1
+default_expiration: 300s
+handlers:
+- url: "/"
+  upload: docs/index.html
+  static_files: docs/index.html
+- url: (/(.*)/$)
+  static_files: docs/\1/index.html
+  upload: docs/(/(.*)/$)
+- url: (/.*\.[a-z]+$)
+  static_files: docs\1
+  upload: docs(/.*\.[a-z]+$)

@@ -1,0 +1,49 @@
+{
+ "items": [
+  {
+   "kind": "youtube#playlistItem",
+   "etag": "\"XI7nbFXulYBIpL0ayR_gDh3eu1k/FQdNDWkvZfPtWv76lpQW7EIyuTs\"",
+   "id": "VVUyT3ktN2hLcXhMSTF3X2Jfa2ZVZ1lBLmpEVl94TXlwckt3",
+   "snippet": {
+    "publishedAt": "2018-10-27T19:48:23.000Z",
+    "channelId": "UC2Oy-7hKqxLI1w_b_kfUgYA",
+    "title": "how to beat the mad house challenge (60 kills) in 24 hours - rainbow six siege",
+    "description": "it's easy! there's really nothing to it. just follow these quick and simple steps to not only unlock the new exclusive crimsonvale loot boxes... but become a millionaire in the process!\n\n🎬 clips recorded 10/25 and 10/26\n📻 music goes here",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/jDV_xMyprKw/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/jDV_xMyprKw/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/jDV_xMyprKw/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/jDV_xMyprKw/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/jDV_xMyprKw/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "insanj",
+    "playlistId": "UU2Oy-7hKqxLI1w_b_kfUgYA",
+    "position": 0,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "jDV_xMyprKw"
+    }
+   }
+  }
+ ]
+}

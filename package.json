@@ -7,7 +7,7 @@
     "start": "bundle exec jekyll serve",
     "build": "bundle exec jekyll build",
     "gulp": "gulp",
-    "youtube": "node insane_sync.js"
+    "youtube": "node assets/js/insane_sync.js"
   },
   "author": {
     "name": "insanj",

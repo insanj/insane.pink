@@ -1,6 +1,6 @@
 ---
 layout: post
-title: clutch comebacks before the censorship patch - rainbow six siege
+title: clutch comebacks before the censorship patch
 date: 2018-11-05
 image: https://i.ytimg.com/vi/BgKmtTEBNTc/hqdefault.jpg
 youtube_url: https://youtube.com/watch?v=BgKmtTEBNTc

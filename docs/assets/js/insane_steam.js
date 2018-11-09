@@ -34,7 +34,7 @@ function insane_getSteamProfileLastOnlineMetadata(steam_apiKey, steam_steamId, s
 
 $("body").ready(function() {
 	insane_getSteamProfileLastOnlineMetadata(steam_creds_apiKey, steam_creds_steamId, function (s_isOnline, s_currentGame, s_profileURL) {
-		if (s_isOnline === true && s_currentGame.includes("Rainbow Six Siege")) {
+		if (s_isOnline === true && s_currentGame != null && s_currentGame.includes("Rainbow Six Siege")) {
 			console.log("🎉 insane.jpg is online on Steam! showing banner...");
 		    var cookieAlert = document.querySelector(".cookiealert");
 		    cookieAlert.offsetHeight; // Force browser to trigger reflow (https://stackoverflow.com/a/39451131)

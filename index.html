@@ -1,23 +1,36 @@
 ---
 layout: default
 ---
-<!-- The main content area -->
-<div class="container row">
-      {% for post in site.posts %}        
 
-      <div class="col-lg-3" style="max-width: 200px;">
-      <div class="card m-1 bg-dark text-white">
-        <img class="card-img-top" src="{{ post.image }}" alt="{{ post.title }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text">{{ post.content | strip_html | truncatewords: 35, "" }}</p>
-          <a href="{{ post.youtube_url }}" class="btn btn-primary">Watch Now</a>
-        </div>
-      </div>
-      </div>
+{% assign post_groups = "" | split: "," %}
+{% assign current_group = "" | split: "," %}
 
-      {% endfor %}
-</div>
+{% for post in site.posts %}
+  {% assign current_group = current_group | push: post %}
+  {% if current_group.size == 2 %}
+      {% assign post_groups = post_groups | push: current_group %}
+      {% assign current_group = "" | split: "," %}
+  {% endif %}
+{% endfor %}
+
+{% for post_group in post_groups %}
+  <div class="card-group mt-2 mb-2">
+
+  {% for post in post_group %}
+    <div class="card bg-dark text-white">
+      <img class="card-img-top" src="{{ post.image }}" alt="{{ post.title }}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content | strip_html }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        {{ post.date | date_to_string }}
+      </div>
+    </div>
+  {% endfor %}
+
+  </div>
+{% endfor %}
 
 <!-- COOKIES -->
 <div class="cookiealert" role="alert" style="width: 100%; text-align:center;">

@@ -2,21 +2,8 @@
 layout: default
 ---
 
-{% assign post_groups = "" | split: "," %}
-{% assign current_group = "" | split: "," %}
-
-{% for post in site.posts %}
-  {% assign current_group = current_group | push: post %}
-  {% if current_group.size == 2 %}
-      {% assign post_groups = post_groups | push: current_group %}
-      {% assign current_group = "" | split: "," %}
-  {% endif %}
-{% endfor %}
-
-{% for post_group in post_groups %}
-  <div class="card-group mt-2 mb-2">
-
-  {% for post in post_group %}
+<div class="card-columns m-4">
+  {% for post in site.posts %}
     <div class="card bg-dark text-white">
       <img class="card-img-top" src="{{ post.image }}" alt="{{ post.title }}" />
       <div class="card-body">
@@ -28,9 +15,7 @@ layout: default
       </div>
     </div>
   {% endfor %}
-
-  </div>
-{% endfor %}
+</div>
 
 <!-- COOKIES -->
 <div class="cookiealert" role="alert" style="width: 100%; text-align:center;">

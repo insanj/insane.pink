@@ -43,3 +43,33 @@ html, body, main {
 .footer__social a {
 	color: #8CC7FF;
 }
+
+.card-columns {
+  column-count: 2;
+  column-gap: 6px;
+}
+
+@media (max-width: 10000px) { 
+	.card-columns {
+		column-count: 4;
+	}
+}
+
+@media (max-width: 1800px) { 
+	.card-columns {
+		column-count: 3;
+	}
+}
+
+@media (max-width: 1100px) { 
+	.card-columns {
+		column-count: 2;
+	}
+}
+
+@media (max-width: 700px) { 
+	.card-columns {
+		column-count: 1;
+	}
+}
+

@@ -1,5 +1,11 @@
-<header class="header">
-  <a class="header__title" href="{{ '/' | absolute_url }}"><img src="{{site.default_img}}" class="header__avatar">{{ site.title }}</a>
 
-  {% include navigation.html %}
-</header>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="{{site.default_img}}" width="30" height="30" class="d-inline-block align-top rounded-circle" alt="">
+    {{ site.title }}
+  </a>
+
+  <a class="navbar-link" href="https://www.patreon.com/insanj" style="text-decoration: none;">
+ 		🎉 Support Me On Patreon
+  </a>
+</nav>

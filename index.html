@@ -2,26 +2,29 @@
 layout: default
 ---
 <!-- The main content area -->
-<div class="posts">
-  <div class="grid-xlarge">
-    <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
+<div class="container row">
+      {% for post in site.posts %}        
 
-      {% for post in site.posts %}
-
-        <!-- The tag below includes the markup for each post - partials/post-card.html -->
-        {% include post-card.html %}
+      <div class="col-lg-3" style="max-width: 200px;">
+      <div class="card m-1 bg-dark text-white">
+        <img class="card-img-top" src="{{ post.image }}" alt="{{ post.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.content | strip_html | truncatewords: 35, "" }}</p>
+          <a href="{{ post.youtube_url }}" class="btn btn-primary">Watch Now</a>
+        </div>
+      </div>
+      </div>
 
       {% endfor %}
-    </div>
-  </div>	
+</div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="/assets/js/insane_steam_creds.js"></script>
-  <script src="/assets/js/insane_steam.js"></script>
-
-  <!-- COOKIES -->
+<!-- COOKIES -->
 <div class="cookiealert" role="alert" style="width: 100%; text-align:center;">
     <a title="ONLINE 🔴 on Steam right now playing Rainbow Six Siege! Click to access Steam profile and play with me." style="color:rgba(231,120,10,1); text-decoration: none;" href="https://steamcommunity.com/id/insanj/">🎮 Playing Siege Right Now 🎮</a>
 </div>
 <!-- /COOKIES -->
-</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/assets/js/insane_steam_creds.js"></script>
+<script src="/assets/js/insane_steam.js"></script>

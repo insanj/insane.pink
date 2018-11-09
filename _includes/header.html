@@ -1,11 +1,17 @@
 
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
-    <img src="{{site.default_img}}" width="30" height="30" class="d-inline-block align-top rounded-circle" alt="">
-    {{ site.title }}
+  <a class="navbar-brand ml-3" href="#">
+    <img src="{{site.default_img}}" width="38" height="38" class="d-inline-block align-middle rounded-circle" alt="">
+    <span class="ml-2 align-middle font-weight-bold"> {{ site.title }} </span>
   </a>
 
-  <a class="navbar-link" href="https://www.patreon.com/insanj" style="text-decoration: none;">
- 		🎉 Support Me On Patreon
-  </a>
+  <div class="navbar m-0">
+    <a class="nav-link" style="color: #d96151;" href="https://patreon.com/insanj">Support Me On Patreon <i style="margin-left: 14px; color: #f96854;" class="fab fa-patreon"></i></a> 
+
+    {% for social in site.social %}
+      <a href="{{ social['url'] }}" target="_blank" style="color: rgba(255,255,255,0.4); margin: 0px 2px 0px 4px;">
+      	<i class="fab fa-{{ social['name'] }}"></i>
+      </a>
+    {% endfor %}
+	</div>
 </nav>

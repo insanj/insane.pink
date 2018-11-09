@@ -4,7 +4,8 @@ layout: default
 
 <div class="card-columns m-4">
   {% for post in site.posts %}
-    <div class="card bg-dark text-white">
+    {% assign post_id = post.title | replace:  " ", "" | truncate: 8, "" %}
+    <div class="card bg-dark text-white" data-toggle="modal" data-target='#{{ post_id }}' style="cursor: pointer;">
       <img class="card-img-top" src="{{ post.image }}" alt="{{ post.title }}" />
       <div class="card-body">
         <h5 class="card-title">{{ post.title }}</h5>
@@ -14,6 +15,25 @@ layout: default
         {{ post.date | date_to_string }}
       </div>
     </div>
+
+    <!-- Large modal -->
+  <div id="{{ post_id }}" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-body">
+          <p>{{ post.description }}</p>
+
+          {% assign youtube_embed_url = post.youtube_url | replace: "https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/" %}
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{{ youtube_embed_url }}"></iframe>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+
   {% endfor %}
 </div>
 
@@ -22,7 +42,9 @@ layout: default
     <a title="ONLINE 🔴 on Steam right now playing Rainbow Six Siege! Click to access Steam profile and play with me." style="color:rgba(231,120,10,1); text-decoration: none;" href="https://steamcommunity.com/id/insanj/">🎮 Playing Siege Right Now 🎮</a>
 </div>
 <!-- /COOKIES -->
+ 
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/assets/js/insane_steam_creds.js"></script>
 <script src="/assets/js/insane_steam.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>

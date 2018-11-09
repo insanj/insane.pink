@@ -1,30 +1,50 @@
 ---
 layout: default
 ---
-<!-- The main content area -->
-<div class="posts">
-  <div class="grid-xlarge">
-    <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
 
-      {% for post in paginator.posts %}
+<div class="card-columns m-4">
+  {% for post in site.posts %}
+    {% assign post_id = post.title | replace:  " ", "" | truncate: 8, "" %}
+    <div class="card bg-dark text-white" data-toggle="modal" data-target='#{{ post_id }}' style="cursor: pointer;">
+      <img class="card-img-top" src="{{ post.image }}" alt="{{ post.title }}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content | strip_html }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        {{ post.date | date_to_string }}
+      </div>
+    </div>
 
-        <!-- The tag below includes the markup for each post - partials/post-card.html -->
-        {% include post-card.html %}
+    <!-- Large modal -->
+  <div id="{{ post_id }}" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-body">
+          <p>{{ post.description }}</p>
 
-      {% endfor %}
+          {% assign youtube_embed_url = post.youtube_url | replace: "https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/" %}
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{{ youtube_embed_url }}"></iframe>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+      </div>
     </div>
   </div>
 
-  {% include pagination.html %}
-	
+  {% endfor %}
+</div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="/assets/js/insane_steam_creds.js"></script>
-  <script src="/assets/js/insane_steam.js"></script>
-
-  <!-- COOKIES -->
+<!-- COOKIES -->
 <div class="cookiealert" role="alert" style="width: 100%; text-align:center;">
     <a title="ONLINE 🔴 on Steam right now playing Rainbow Six Siege! Click to access Steam profile and play with me." style="color:rgba(231,120,10,1); text-decoration: none;" href="https://steamcommunity.com/id/insanj/">🎮 Playing Siege Right Now 🎮</a>
 </div>
 <!-- /COOKIES -->
-</div>
+ 
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/assets/js/insane_steam_creds.js"></script>
+<script src="/assets/js/insane_steam.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>

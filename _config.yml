@@ -1,9 +1,7 @@
 # Site/SEO settings
 email: me@insanj.com
 baseurl: ""
-paginate: 12
-paginate_path: "/page/:num"
-permalink: /:year/:month/:day/:title/
+permalink: /:year/:title/
 google_analytics: 
 
 name: insane.jpg
@@ -32,9 +30,6 @@ author:
 # Build settings
 markdown: kramdown
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-youtube
   - jekyll-app-engine
 compress_html:
   clippings: all
@@ -42,7 +37,12 @@ compress_html:
   startings: [html, head, body]
 exclude: [vendor]
 
+sass:
+  sass_dir: assets/scss
+  style: compressed
+
 app_engine:
   runtime: go
   api_version: go1
   default_expiration: 300s
+

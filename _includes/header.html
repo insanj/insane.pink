@@ -1,5 +1,17 @@
-<header class="header">
-  <a class="header__title" href="{{ '/' | absolute_url }}"><img src="{{site.default_img}}" class="header__avatar">{{ site.title }}</a>
 
-  {% include navigation.html %}
-</header>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand ml-3" href="#">
+    <img src="{{site.default_img}}" width="38" height="38" class="d-inline-block align-middle rounded-circle" alt="">
+    <span class="ml-2 align-middle font-weight-bold"> {{ site.title }} </span>
+  </a>
+
+  <div class="navbar m-0">
+    <a class="nav-link" style="color: #d96151;" href="https://patreon.com/insanj">Support Me On Patreon <i style="margin-left: 14px; color: #f96854;" class="fab fa-patreon"></i></a> 
+
+    {% for social in site.social %}
+      <a href="{{ social['url'] }}" target="_blank" style="color: rgba(255,255,255,0.4); margin: 0px 2px 0px 4px;">
+      	<i class="fab fa-{{ social['name'] }}"></i>
+      </a>
+    {% endfor %}
+	</div>
+</nav>

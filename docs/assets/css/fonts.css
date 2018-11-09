@@ -1,0 +1,22 @@
+
+@font-face {
+    font-family: din;
+    src: url(../fonts/d-din/D-DINExp.woff);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: din;
+    src: url(../fonts/d-din/D-DINExp-Bold.woff);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: din;
+    src: url(../fonts/d-din/D-DINExp-Italic.woff);
+    font-style: italic;
+}
+
+html, body {
+	font-family: din;
+}

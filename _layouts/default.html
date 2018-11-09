@@ -11,14 +11,7 @@ layout: compress
 <body id="{% if page.title %}{{ page.title | slugify }}{% else %}home{% endif %}" class="{{ page.layout | downcase }}-layout">
   
   {% include header.html %}
-
-  <main class="💈">
-
-    {{ content }}
-    
-  </main>
-
-  {% include footer.html %}
+  {{ content }}
 
 </body>
 </html>

@@ -6,17 +6,14 @@ layout: default
   <div class="grid-xlarge">
     <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
 
-      {% for post in paginator.posts %}
+      {% for post in site.posts %}
 
         <!-- The tag below includes the markup for each post - partials/post-card.html -->
         {% include post-card.html %}
 
       {% endfor %}
     </div>
-  </div>
-
-  {% include pagination.html %}
-	
+  </div>	
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="/assets/js/insane_steam_creds.js"></script>

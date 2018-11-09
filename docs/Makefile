@@ -9,3 +9,6 @@ jekyll:
 
 gcloud:
 	gcloud app deploy
+
+serve:
+	bundle exec jekyll serve --watch

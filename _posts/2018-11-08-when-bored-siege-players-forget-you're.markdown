@@ -2,7 +2,7 @@
 layout: post
 title: when bored siege players forget you're still alive
 date: 2018-11-08
-image: https://i.ytimg.com/vi/9siryuMtXIE/hqdefault.jpg
+image: /assets/images/bored.png
 youtube_url: https://youtube.com/watch?v=9siryuMtXIE
 ---
 

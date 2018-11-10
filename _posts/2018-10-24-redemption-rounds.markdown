@@ -2,7 +2,7 @@
 layout: post
 title: "redemption rounds"
 date: 2018-10-24
-image: /assets/images/redemption.jpg
+image: /assets/images/redemption.png
 youtube_url: https://www.youtube.com/watch?v=YQ7SCyUJLRA
 ---
 

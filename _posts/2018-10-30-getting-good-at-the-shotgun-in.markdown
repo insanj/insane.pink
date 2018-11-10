@@ -2,7 +2,7 @@
 layout: post
 title: getting good at the shotgun in grim sky
 date: 2018-10-30
-image: /assets/images/grimsky.jpg
+image: /assets/images/grimsky.png
 youtube_url: https://www.youtube.com/watch?v=995xO2sVaiU
 ---
 

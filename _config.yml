@@ -31,15 +31,12 @@ author:
 markdown: kramdown
 plugins:
   - jekyll-app-engine
+  
 compress_html:
   clippings: all
   comments: all
   startings: [html, head, body]
 exclude: [vendor]
-
-sass:
-  sass_dir: assets/scss
-  style: compressed
 
 app_engine:
   runtime: go

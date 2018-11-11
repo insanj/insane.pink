@@ -13,6 +13,6 @@
     "url": "https://insane.pw"
   },
   "dependencies": {
-    "jquery": "^3.0.0",
-  },
+    "jquery": "^3.0.0"
+  }
 }

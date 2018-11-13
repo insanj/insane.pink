@@ -2,13 +2,21 @@
 .PHONY: all
 all: jekyll gcloud
 
-jekyll:
-	rm -r -f docs
-	rm -r -f _site
-	bundle exec jekyll build --destination docs
+.PHONY: jekyll
+jekyll: build
 
 gcloud:
 	gcloud app deploy
 
-serve:
+start:
 	bundle exec jekyll serve --watch
+
+build: clean
+	bundle exec jekyll build --destination docs
+
+clean:
+	rm -r -f docs
+	rm -r -f _site
+
+sync:
+	node assets/js/insane_sync.js

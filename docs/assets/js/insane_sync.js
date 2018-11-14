@@ -63,10 +63,18 @@ function getYoutubeVideosFromInternet(limit, completion) {
 				var val = youtubeVideos[i];
 				var youtubeVideoSnippet = val["snippet"];
 				var	youtubeVideoId = youtubeVideoSnippet["resourceId"]["videoId"];
+				var youtubeCleanedUpTitle = youtubeVideoSnippet["title"].split(" - ")[0];
+				var youtubeHighestResThumbnail = youtubeVideoSnippet["thumbnails"]["default"];
+				if (youtubeVideoSnippet["thumbnails"]["maxres"]) {
+					youtubeHighestResThumbnail = youtubeVideoSnippet["thumbnails"]["maxres"];
+				} else if (youtubeVideoSnippet["thumbnails"]["high"]) {
+					youtubeHighestResThumbnail = youtubeVideoSnippet["thumbnails"]["high"];
+				}
+
 				var youtubeDiv = {
-					youtubeVideoName: youtubeVideoSnippet["title"],
-					youtubeVideoURL: "https://youtube.com/watch?v=" + youtubeVideoId,
-					youtubeVideoThumbnailURL: youtubeVideoSnippet["thumbnails"]["high"]["url"],
+					youtubeVideoName: youtubeCleanedUpTitle,
+					youtubeVideoURL: "https://www.youtube.com/watch?v=" + youtubeVideoId,
+					youtubeVideoThumbnailURL: youtubeHighestResThumbnail["url"],
 					youtubeVideoDescription: youtubeVideoSnippet["description"].split("\n")[0],
 					youtubeVideoDate: youtubeVideoSnippet["publishedAt"].split("T")[0]
 				};

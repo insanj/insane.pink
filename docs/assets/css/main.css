@@ -84,3 +84,7 @@ html, body, main {
 .modal.in .modal-dialog {
 
 }
+
+.list-group-item.active {
+	border-color: rgba(0,0,0,0);
+}

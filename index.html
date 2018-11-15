@@ -2,39 +2,76 @@
 layout: default
 ---
 
-<div class="card-columns m-4">
-  {% for post in site.posts %}
-    {% assign post_id = post.title | replace:  " ", "" | truncate: 8, "" %}
-    <div class="card bg-dark text-white" data-toggle="modal" data-target='#{{ post_id }}' style="cursor: pointer;">
-      <img class="card-img-top" src="{{ post.image }}" alt="{{ post.title }}" />
-      <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
-        <p class="card-text">{{ post.content | strip_html }}</p>
-      </div>
-      <div class="card-footer text-muted">
-        {{ post.date | date_to_string }}
-      </div>
-    </div>
+<!-- Page container (sidebar and content containers) -->
+<div class="row">
+  <!-- Sidebar container -->
+  <div class="col- ml-4 mt-3 mr-0">
+    <div class="list-group" id="list-tab" role="tablist">
 
-    <!-- Large modal -->
-  <div id="{{ post_id }}" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-      <div class="modal-content bg-dark">
-        <div class="modal-body">
-          <p>{{ post.description }}</p>
+      <a class="list-group-item list-group-item-action bg-dark text-light" id="list-videos-list" data-toggle="list" href="#list-videos" role="tab" aria-controls="videos">
+        Videos
+        <span class="badge badge-secondary badge-pill ml-2">19</span>
+      </a>
 
-          {% assign youtube_embed_url = post.youtube_url | replace: "https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/" %}
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="{{ youtube_embed_url }}"></iframe>
-          </div>
-        </div>
-
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
-      </div>
+      <a class="list-group-item list-group-item-action bg-dark text-light" id="list-music-list" data-toggle="list" href="#list-music" role="tab" aria-controls="music">
+        Music
+        <span class="badge badge-secondary badge-pill ml-2">6</span>
+      </a>
     </div>
   </div>
 
-  {% endfor %}
+  <!-- Content container -->
+  <div class="col-lg tab-content" id="nav-tabContent">
+    <!-- All posts container -->
+    <div class="card-columns m-2 tab-pane fade show active"  id="list-videos" role="tabpanel" aria-labelledby="list-videos-list">
+      {% for post in site.posts %}
+        {% assign post_id = post.title | replace:  " ", "" | truncate: 8, "" %}
+        <!-- Post content -->
+        <div class="card bg-dark text-white" data-toggle="modal" data-target='#{{ post_id }}' style="cursor: pointer;">
+          <img class="card-img-top" src="{{ post.image }}" alt="{{ post.title }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content | strip_html }}</p>
+          </div>
+          <div class="card-footer text-muted">
+            {{ post.date | date_to_string }}
+          </div>
+        </div>
+
+        <!-- Large modal for post -->
+        <div id="{{ post_id }}" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark">
+              <div class="modal-body">
+                <p>{{ post.description }}</p>
+
+                {% assign youtube_embed_url = post.youtube_url | replace: "https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/" %}
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="{{ youtube_embed_url }}"></iframe>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Music container -->
+    <div class="mt-2 tab-pane fade"  id="list-music" role="tabpanel" aria-labelledby="list-music-list">
+      <iframe class="col-lg" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/507794262&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+
+      <iframe  class="col-lg" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/529381356&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+
+      <iframe class="col-lg" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/528366261&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+
+      <iframe class="col-lg" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/529341462&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+
+      <iframe class="col-lg" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/523381869&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+
+      <iframe class="col-lg" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/205474754&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+  </div>
 </div>
 
 <!-- COOKIES -->
